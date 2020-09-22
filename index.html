@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Fibonacci_number</title>
+    <style>
+        body {
+            width: 100%;
+            height: 100%;
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: url(./sky.webp);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+
+
+        }
+
+
+        .container {
+            width: 100%;
+            margin-top: 100px;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(4, 1fr);
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+            justify-items: center;
+        }
+
+
+
+        .input {
+            grid-area: 1/1/1/1;
+            height: 33px;
+            width: 200px;
+            border-radius: 5px;
+            border-color: blue;
+            box-shadow: 3px 3px 3px 3px blue;
+            font-size: 18px;
+            text-align: center;
+            margin-top: 40px;
+            justify-content: center;
+            background-color: white;
+
+        }
+
+        .check {
+            grid-area: 1/2/1/1;
+            height: 43px;
+            width: 200px;
+            border-radius: 20px;
+            border-color: blue;
+            box-shadow: 3px 3px 3px 3px blue;
+            font-size: 18px;
+            margin-top: 40px;
+            background-color: white;
+
+        }
+
+        #result {
+            grid-area: 1/3/1/1;
+            height: 33px;
+            width: 200px;
+            border-radius: 5px;
+            border-color: blue;
+            box-shadow: 3px 3px 3px 3px blue;
+            font-size: 18px;
+            text-align: center;
+            text-justify: center;
+            margin-top: 40px;
+            background-color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <h1>FIBONACCI NUMBER</h1>
+        </div>
+        <div>
+            <input class="input" type="text" id="fibo" placeholder="Enter Fibonacci Index #">
+        </div>
+        <div>
+            <button class="check">Find Fibonacci #</button>
+        </div>
+        <div>
+            <p id="result">Result </p>
+        </div>
+    </div>
+    <script>
+
+        const InputNumber = document.querySelector("input")
+        const CheckButton = document.querySelector("button")
+        const ResultNumber = document.getElementById("result")
+
+        console.log(InputNumber)
+        console.log(CheckButton)
+
+        addEventListener("click", function () {
+
+            if (InputNumber.value === "") {
+                return;
+            }
+
+
+            let x = parseInt(InputNumber.value)
+            if (ResultNumber) {
+
+            }
+            ResultNumber.innerHTML = fibo(x)
+
+        })
+
+        function fibo(n) {
+            let arr = [1, 1];
+            for (let i = 0; i < n + 1; i++) {
+                arr.push(arr[i] + arr[i + 1])
+            }
+            return arr[n]
+        }
+    </script>
+</body>
+
+</html>
